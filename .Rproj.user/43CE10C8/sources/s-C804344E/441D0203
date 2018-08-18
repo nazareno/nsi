@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1534628465134.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "441D0203",
+    "lastKnownWriteTime" : 4510097408,
+    "last_content_update" : 1534628465134,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "907104D9",
+        "caption" : "completo",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=completo&cache_key=907104D9",
+        "displayedObservations" : "1333",
+        "environment" : "",
+        "object" : "completo",
+        "preview" : "0",
+        "totalObservations" : "1333",
+        "variables" : "23"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

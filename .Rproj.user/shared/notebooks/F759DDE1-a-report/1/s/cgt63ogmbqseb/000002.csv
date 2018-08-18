@@ -1,0 +1,8 @@
+"0","relativos = dados %>% 
+    group_by(sexo, keywords) %>% 
+    summarise(n = n()) %>% 
+    summarise(freq = n/ n())
+"
+"2","Error in summarise_impl(.data, dots) : 
+  Column `freq` must be length 1 (a summary value), not 810
+"
