@@ -26,8 +26,33 @@ import_data <- function(){
     deputados = XML::xmlToDataFrame("http://www.camara.leg.br/sitcamaraws/deputados.asmx/ObterDeputados")
     deputados = deputados %>% 
         mutate(nome_simples = tolower(nomeParlamentar))
-    props = read_csv2("https://dadosabertos.camara.leg.br/arquivos/proposicoes/proposicoes-2018.csv")
-    autores = read_csv2("https://dadosabertos.camara.leg.br/arquivos/proposicoesAutores/proposicoesAutores-2018.csv")
+    anos = c("2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018")
+    
+    props18 = read_csv2("https://dadosabertos.camara.leg.br/arquivos/proposicoes/proposicoes-2018.csv")
+    props17 = read_csv2("https://dadosabertos.camara.leg.br/arquivos/proposicoes/proposicoes-2017.csv")
+    props16 = read_csv2("https://dadosabertos.camara.leg.br/arquivos/proposicoes/proposicoes-2016.csv")
+    props15 = read_csv2("https://dadosabertos.camara.leg.br/arquivos/proposicoes/proposicoes-2015.csv")
+    props14 = read_csv2("https://dadosabertos.camara.leg.br/arquivos/proposicoes/proposicoes-2014.csv")
+    
+    
+    autores18 = read_csv2("https://dadosabertos.camara.leg.br/arquivos/proposicoesAutores/proposicoesAutores-2018.csv")
+    autores17 = read_csv2("https://dadosabertos.camara.leg.br/arquivos/proposicoesAutores/proposicoesAutores-2017.csv")
+    autores16 = read_csv2("https://dadosabertos.camara.leg.br/arquivos/proposicoesAutores/proposicoesAutores-2016.csv")
+    autores15 = read_csv2("https://dadosabertos.camara.leg.br/arquivos/proposicoesAutores/proposicoesAutores-2015.csv")
+    autores14 = read_csv2("https://dadosabertos.camara.leg.br/arquivos/proposicoesAutores/proposicoesAutores-2014.csv")
+    
+    props = rbind(props18, props17)
+    props = rbind(props, props16)
+    props = rbind(props, props15)
+    props = rbind(props, props14)
+    
+    autores = rbind(autores18, autores17)
+    autores = rbind(autores, autores16)
+    autores = rbind(autores, autores15)
+    autores = rbind(autores, autores14)
+    
+    #props = read_csv2("https://dadosabertos.camara.leg.br/arquivos/proposicoes/proposicoes-2018.csv")
+    #autores = read_csv2("https://dadosabertos.camara.leg.br/arquivos/proposicoesAutores/proposicoesAutores-2018.csv")
     
     completo = props %>% 
         left_join(autores, 
